@@ -1,9 +1,9 @@
 ### node sever run
-* `git clone https://github.com/caleboki/angular4-http.git`
+* git clone https://github.com/praveenkumar-r/ChargeBeePortal.git
 
 * `cd node/node 
 
-* `Included node modules for global install run 'npm install -g' to install from package.json`
+* `Run 'npm install' to install from package.json`
 
 * `start node server , run command 'node server.js'
 
@@ -14,7 +14,7 @@
 
 * cd ChargeBeePortals
 
-* Included node modules for global install run 'npm install -g' to install from package.json`
+* Run 'npm install' to install from package.json`
 
 * Run command 'http-server' listens to public folder
 
