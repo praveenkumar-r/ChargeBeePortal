@@ -1,0 +1,45 @@
+<div ng-if='accountInfo' class='redirect'>
+    <a ng-href="#!/home">
+        << Home</a>
+</div>
+<div ng-if='!accountInfo' style="margin: 1%;" ng-click=toggleAccountView()>
+    <a class='back'>
+        << Account Summary</a>
+</div>
+
+<div class='flexstyle' style="margin-top: 5%;" ng-if='customers && accountInfo'>
+    <div class='flexstyle outerPanel'>
+        <div class='panelHeader'>
+            <div class='flexstyle headtext'>Account Summary</div>
+        </div>
+        <div class='panelData' ng-repeat='cust in customers' ng-if='cust.customer.email'>
+            <div class='indPanel'>
+                <div style="width: 90%;margin-left: 10%;">{{cust.customer.first_name }}{{cust.customer.last_name}}</div>
+                <div class='email'>{{cust.customer.email}}</div>
+            </div>
+            <div class='arrow' ng-click=showDetailedInfo(cust.customer)>&gt;</div>
+        </div>
+    </div>
+</div>
+
+</div>
+<div ng-if="!accountInfo" style=" display: flex; justify-content: center; margin-top: 5%; ">
+    <div style=" display: flex; border: 1px solid darkblue; width: 25%; flex-flow: column; justify-content: center; ">
+        <div style=" display: flex; justify-content: center; color: white; font-size: 1.5em; background-color: #5c436c; height: 50px;">Update Customer Information</div>
+        <div style=" margin-bottom: 3%; margin-top: 1%; padding: 1%; ">
+            <div style=" margin-bottom: 5%; ">
+                <label style=" margin-right: 3px; "> First Name (Optional)</label>
+                <input type="text" ng-model="selectedCustomer.first_name" style=" width: 60%; height: 30px; ">
+            </div>
+            <label for="first_name"> Last Name (Optional)</label>
+            <input type="textbox" style=" width: 60%; height: 30px; " ng-model="selectedCustomer.last_name">
+        </div>
+        <div style=" padding: 1%; ">
+            <label>Email</label>
+            <input type="textbox" ng-model="selectedCustomer.email" style=" height: 30px; width: 80%; margin-left: 5%; ">
+        </div>
+        <div style=" margin-top: 15%; margin-bottom: 2%; display: flex; justify-content: center; ">
+            <button ng-click="updateCustomer()">UPDATE</button>
+        </div>
+    </div>
+</div>
