@@ -1,0 +1,20 @@
+<div style=" margin: 1%; ">
+    <a ng-href="#!/home"><< Home</a>
+</div>
+
+<div style=" display: flex; justify-content: center; margin-top: 5%; " ng-if='invoices'>
+    <div style=" display: flex; border: 1px solid darkblue; width: 25%; flex-flow: column; justify-content: center; ">
+        <div style=" width: 100%; background-color: #5c436c; height: 50px; ">
+            <div style=" display: flex; justify-content: center; color: white; font-size: 2em; ">Billing History</div>
+        </div>
+        <div style=" height: 235px; overflow: auto; " when-scrolled='loadData()'>
+            <div style=" padding: 0.5%; display: flex; justify-content: space-between; margin-bottom: 5%; margin-top: 10%; " ng-repeat='inv in selInvoices'>
+                <div style=" width: 90%; display: flex; flex-flow: column; ">
+                    <div style=" width: 90%; margin-left: 10%; ">{{inv.invoice.id }}</div>
+                    <div style=" margin-left: 10%; margin-top: 1%; width: 90%; ">{{inv.invoice.total}} {{inv.invoice.currency_code}}</div>
+                </div>
+                <div style=" font-weight: bolder; font-size: x-large; display: flex; margin-top: 1.5%; cursor: pointer; margin-right: 8%; margin-top:1.5%; " ng-click=showDetailedInfo(cust.customer)>&gt;</div>
+            </div>
+        </div>
+    </div>
+</div>

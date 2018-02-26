@@ -1,0 +1,1 @@
+var cbPortal=angular.module('cbportal',['ui.router']);

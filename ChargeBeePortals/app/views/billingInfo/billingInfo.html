@@ -1,0 +1,68 @@
+<div ng-if='billingInfo' style=" margin: 1%; ">
+    <a ng-href="#!/home">
+        << Home</a>
+</div>
+<div ng-if='!billingInfo' ng-click="toggleBilingView()" style=" margin: 1%; ">
+    <a style="color: -webkit-link; cursor: pointer; text-decoration: underline;">
+        << Billing Summary</a>
+</div>
+
+<div style=" display: flex; justify-content: center; margin-top: 5%; " ng-if='selectedCustomeraddress && billingInfo'>
+    <div style=" display: flex; border: 1px solid darkblue; width: 25%; flex-flow: column; justify-content: center; ">
+        <div style=" width: 100%; ">
+            <div style=" display: flex; justify-content: center; color: white; font-size: 2em; background-color: #5c436c; height: 50px; ">Billing Address Summary</div>
+            <div style=" padding: 0.5%; display: flex; justify-content: space-between; margin-bottom: 5%; margin-top: 5%; ">
+                <div style=" width: 90%; display: flex; flex-flow: column; ">
+                    <div style=" width: 90%; margin-left: 10%; ">{{selectedCustomeraddress.first_name }}{{selectedCustomeraddress.last_name}}</div>
+                    <div style=" margin-left: 10%; margin-top: 1%; width: 90%; ">{{selectedCustomeraddress.line1}} {{ selectedCustomeraddress.line2 }} {{ selectedCustomeraddress.city
+                        }} {{ selectedCustomeraddress.state }} {{ selectedCustomeraddress.country }} {{ selectedCustomeraddress.zip
+                        }} 
+                    </div>
+                </div>
+                <div style=" font-weight: bolder; font-size: x-large; display: flex; margin-top: 1.5%; cursor: pointer; margin-right: 8%; margin-top:1.5%; " ng-click="toggleBilingView()">&gt;</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!billingInfo" style=" display: flex; justify-content: center; margin-top: 5%; ">
+    <div style=" display: flex; border: 1px solid darkblue; width: 25%; flex-flow: column; justify-content: center; ">
+        <div style=" display: flex; justify-content: center; color: white; font-size: 1.5em; background-color: #5c436c; height: 50px; ">Update Billing Address</div>
+        <div style=" padding-left: 2%; ">
+            <div style=" margin-bottom: 3%; margin-top: 1%; ">
+                <div style=" margin-bottom: 5%; ">
+                    <label style=" margin-right: 3px; "> First Name (Optional)</label>
+                    <input type="text" ng-model="selectedCustomeraddress.first_name" style=" width: 60%; height: 30px; ">
+                </div>
+                <label> Last Name (Optional)</label>
+                <input type="textbox" style=" width: 60%; height: 30px; " ng-model="selectedCustomeraddress.last_name">
+            </div>
+            <div style=" margin-bottom: 5%; ">
+                <label>Address Line1</label>
+                <input type="textbox" ng-model="selectedCustomeraddress.line1" style=" height: 30px; width: 60%; margin-left: 12%; ">
+            </div>
+            <div style=" margin-bottom: 5%; ">
+                <label>Address Line2(optional)</label>
+                <input type="textbox" ng-model="selectedCustomeraddress.line" style=" height: 30px; width: 56%; margin-left: 1%; ">
+            </div>
+            <div style=" margin-bottom: 5%; ">
+                <label>City</label>
+                <input type="textbox" ng-model="selectedCustomeraddress.city" style=" height: 30px; width: 80%; margin-left: 7%; ">
+            </div>
+            <div style=" margin-bottom: 5%; ">
+                <label>Zip</label>
+                <input type="textbox" ng-model="selectedCustomeraddress.zip" style=" height: 30px; width: 80%; margin-left: 9%; " >
+            </div>
+            <div style=" margin-bottom: 5%; ">
+                <label>State</label>
+                <input type="textbox" ng-model="selectedCustomeraddress.state" style=" height: 30px; width: 80%; margin-left: 7%; " >
+            </div>
+            <div style=" margin-bottom: 5%; ">
+                <label>Country</label>
+                <input type="textbox" ng-model="selectedCustomeraddress.country" style=" height: 30px; width: 80%; margin-left: 2%; " >
+            </div>
+            <div style=" margin-top: 15%; margin-bottom: 2%; display: flex; justify-content: center; ">
+                <button ng-click="updateBillingAddress()">UPDATE</button>
+            </div>
+        </div>
+    </div>
+</div>
