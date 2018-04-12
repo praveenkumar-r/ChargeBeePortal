@@ -1,0 +1,10 @@
+{
+	viewlistfeature: 'Trucks',
+	viewlist:[
+		{ id:100, name: 'Custom View 1'},
+		{ id:101, name: 'Custom View 2'},
+		{ id:102, name: 'Custom View 3'}
+	],
+	selectedview: 'Custom View 2'
+	
+}
